@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
+  </head>
+  <body>
+    <header>
+      <img src="assets/images/logo.png" class="logo" />
+    </header>
+    <main id="main">
+      <section class="photograph-header">
+        <article>
+          <h1 class="name"></h1>
+          <p class="pays"></p>
+          <p class="citation"></p>
+        </article>
+        <button class="contact_button" onclick="displayModal()">
+          Contactez-moi
+        </button>
+        <img class="avatar" src="" alt="avatar" />
+      </section>
+      <section class="photograph-media">
+        <div>
+          <label for="select">Trier par</label>
+          <select name="" id="select">
+            <option id="Popularité" value="">
+              Popularité
+            </option>
+            <hr />
+            <option id="Date" value="">
+              Date
+            </option>
+            <hr />
+            <option id="Titre" value="">
+              Titre
+            </option>
+          </select>
+        </div>
+        <div class="media"></div>
+      </section>
+    </main>
+    <div class="lightbox">
+      <div class="dialog">
+        <ion-icon class="arrowLeft" name="arrow-dropleft-circle"></ion-icon>
+        <div class="imgbox"></div>
+        <ion-icon class="arrowRight" name="arrow-dropright-circle"></ion-icon>
+      </div>
+    </div>
+    <div id="contact_modal">
+      <div class="modal">
+        <header>
+          <h2>Contactez-moi</h2>
+          <img src="assets/icons/close.svg" onclick="closeModal()" />
+        </header>
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input />
+          </div>
+          <button class="contact_button">Envoyer</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="scripts/utils/modal.js"></script>
+    <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/factories/mediaPhotographers.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
+  </body>
+</html>

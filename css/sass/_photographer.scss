@@ -1,0 +1,242 @@
+#contact_modal {
+    display: none;
+}
+
+.photograph-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+
+    article {
+        display: inherit;
+        flex-direction: column;
+
+        h1 {
+            color: #d45e43;
+            font-size: 50px;
+            margin: 0;
+        }
+
+        p.pays {
+            color: #901C1C;
+        }
+
+        p.citation {
+            color: #575757;
+        }
+    }
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* mon code ajouter */
+.lightbox{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 5000;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    ion-icon{
+        cursor: pointer;
+        font-size: 55px;
+    }
+    #close{
+        position: fixed;
+        top: 25px;
+        right: 25px;
+    }
+    .dialog{
+        display: flex;
+        justify-content: space-around;
+     
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        background-color: #ffffff;
+        ion-icon{
+            cursor: pointer;
+            font-size: 45px;
+        }
+        .imgbox{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            img{
+                object-fit: cover;
+                border-radius: 15px;
+                min-width: 300px;
+                width: 500px;
+                height: 500px;
+            }
+            video{
+                  object-fit: cover;
+                border-radius: 15px;
+                min-width: 300px;
+                width: 500px;
+                height: 500px;
+            }
+        }
+       
+
+    }
+}
+.avatar {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+.photograph-media {
+    margin: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #select {
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        padding: 11px;
+        width: 150px;
+        height: 50px;
+        border: none;
+        background-color: #901C1C;
+        border-radius: 5px;
+
+    }
+
+    .media {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+
+        .modalSection {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: #901C1C;
+        }
+
+        article {
+            margin-top: 100px;
+            width: calc(100% / 3 - 50px);
+            min-width: 300px;
+            height: 400px;
+
+            img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            video {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            #describ {
+                display: flex;
+                align-items: center;
+
+                h2 {
+                    color: #901C1C;
+                    margin-right: auto;
+                }
+
+                ion-icon {
+                    font-size: 30px;
+                    color: #901C1C;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #da0000;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
