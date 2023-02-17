@@ -64,6 +64,18 @@ body .photographer_section article img {
   display: none;
 }
 
+.modal {
+  height: 80vh;
+}
+
+.modalForm {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 50px;
+}
+
 .photograph-header {
   display: flex;
   align-items: center;

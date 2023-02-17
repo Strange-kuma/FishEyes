@@ -25,26 +25,30 @@ function getUserPage() {
 function photographerMediaFactory(mediaData, index) {
     const { id, photographerId, title, image, video, likes, date, price } = mediaData;
     let media;
-    // function triMedia() {
-    //     const triByLikes = document.getElementById('Popularité')
-    //     const triByDate = document.getElementById('Date')
-    //     const triByAlphabet = document.getElementById('Titre')
-    //     triByLikes.addEventListener('click', function () {
-    //     })
-    //     triByDate.addEventListener('click', function () {
-    //     })
-    //     triByAlphabet.addEventListener('click', function (x, y) {
-    //         var s = allPhMedias.sort();
-    //             if (x.allPhMedias['title'] < y.allPhMedias['title']) { return -1; }
-    //             if (x.allPhMedias['title'] > y.allPhMedias['title']) { return 1; }
-    //             return 0
-    //         console.log(s);
-    //     })
-    // }
-    // triMedia()
+
+    const triByLikes = document.getElementById('Popularité')
+    const triByDate = document.getElementById('Date')
+    const triByAlphabet = document.getElementById('Titre')
+    triByLikes.addEventListener('click', function () {
+    })
+    triByDate.addEventListener('click', function () {
+    })
+    triByAlphabet.addEventListener('click', function () {
+        allPhMedias.sort(function (a, b) {
+            var textA = a.title.toUpperCase();
+            var textB = b.title.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
+
+
+    })
+
+
     function getMediaCardDOM() {
         //-------------------------------------------- Variable de création de la balise article 
         const article = document.createElement('article');
+        //-------------------------------------------- Attribut le texte alternatif 
+        article.setAttribute('alt', 'media card')
         //-------------------------------------------- Si le media image existe alor... 
         if (image) {
             //-------------------------------------------- Variable d'url qui selectionnent le media selon l'id du photographe  
@@ -53,6 +57,8 @@ function photographerMediaFactory(mediaData, index) {
             const img = document.createElement('img');
             //-------------------------------------------- Attribut la variable d'url à la source 
             img.setAttribute("src", media)
+            //-------------------------------------------- Attribut le texte alternatif 
+            img.setAttribute("alt", title)
             //-------------------------------------------- Introduit la balise img
             article.appendChild(img);
             //-------------------------------------------- Au click sur sur le media image active la lightbox
@@ -114,6 +120,25 @@ function photographerMediaFactory(mediaData, index) {
                     }
                     slideShow(imageIndex)
                 })
+                //-------------------------------------------- function de touche du clavier des fléches de la lightbox
+                document.addEventListener('keydown', function (event) {
+
+                    if (event.key == "ArrowLeft") {
+                        imageIndex--
+                        if (imageIndex < 0) {
+                            imageIndex = mediaData.length - 1
+                        }
+                        slideShow(imageIndex)
+                    } else if (event.key == "ArrowRight") {
+                        imageIndex++
+                        if (imageIndex >= mediaData.length) {
+                            imageIndex = 0
+                        }
+                        slideShow(imageIndex)
+                    }
+
+                })
+                //-------------------------------------------- fin de la onction click pour lightbox (image)
             })
 
             //-------------------------------------------- fin de if (image)
@@ -179,8 +204,28 @@ function photographerMediaFactory(mediaData, index) {
                     }
                     slideShow(imageIndex)
                 })
+                //-------------------------------------------- function de touche du clavier des fléches de la lightbox
+                document.addEventListener('keydown', function (event) {
+
+                    if (event.key == "ArrowLeft") {
+                        imageIndex--
+                        if (imageIndex < 0) {
+                            imageIndex = mediaData.length - 1
+                        }
+                        slideShow(imageIndex)
+                    } else if (event.key == "ArrowRight") {
+                        imageIndex++
+                        if (imageIndex >= mediaData.length) {
+                            imageIndex = 0
+                        }
+                        slideShow(imageIndex)
+                    }
+
+                })
             })
+
         }
+
         //-------------------------------------------- Création d'une balise div
         const div = document.createElement('div')
         //-------------------------------------------- Attribue un id à la div 
@@ -210,6 +255,8 @@ function photographerMediaFactory(mediaData, index) {
                 Icon.style.color = "#901C1C"
             }
         })
+
+
         //-------------------------------------------- mise en page des articles 
         article.appendChild(div)
         div.appendChild(h2)
