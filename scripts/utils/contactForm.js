@@ -1,6 +1,7 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.setAttribute('class', 'modalForm')
+   
 	modal.style.display = "block";
 
 }
