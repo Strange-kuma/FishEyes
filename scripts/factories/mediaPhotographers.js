@@ -1,3 +1,4 @@
+
 function getUserPage() {
 
     //variable de recuration des donnee stocker dans le localstorage avec une conversion au format js
@@ -14,13 +15,6 @@ function getUserPage() {
     Getpays.textContent = photographers.city + ", " + photographers.country
     Getcitation.textContent = photographers.tagline
 }
-
-
-
-
-
-
-
 
 function photographerMediaFactory(mediaData, index) {
     const { id, photographerId, title, image, video, likes, date, price } = mediaData;
