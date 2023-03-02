@@ -1,7 +1,6 @@
 let allPhMedias = []
 let allPhotographers = []
 let photographerProfil = {
-    
 }
 async function getPhotographers() {
     // Récupération des pièces depuis le fichier JSON

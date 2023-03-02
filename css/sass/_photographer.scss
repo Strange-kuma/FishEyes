@@ -138,7 +138,6 @@ form input {
     .dialog {
         display: flex;
         justify-content: space-around;
-
         align-items: center;
         width: 90%;
         height: 90%;
@@ -157,7 +156,7 @@ form input {
 
             img {
                 object-fit: cover;
-                
+
                 border-radius: 15px;
                 min-width: 300px;
                 width: 1000px;
@@ -171,13 +170,12 @@ form input {
                 width: 1000px;
                 height: 800px;
             }
-            p{
+
+            p {
                 width: 100%;
                 text-align: start;
             }
         }
-
-
     }
 }
 
@@ -261,9 +259,7 @@ form input {
                         color: #da0000;
                     }
                 }
-
             }
         }
     }
-
 }

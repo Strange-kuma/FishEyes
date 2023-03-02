@@ -27,7 +27,6 @@ function photographerMediaFactory(mediaData, index) {
     })
     triByDate.addEventListener('click', function () {
         allPhMedias.sort(function (a, b) {
-
             return new Date(b.date) - new Date(a.date);
         })
         document.querySelector('.media').innerHTML = ""
@@ -115,12 +114,10 @@ function photographerMediaFactory(mediaData, index) {
                     if (imageIndex < 0) {
                         imageIndex = allPhMedias.length - 1
                     }
-
                     slideShow(imageIndex)
                 })
                 //-------------------------------------------- function de touche du clavier des fléches de la lightbox
                 document.addEventListener('keydown', function (event) {
-
                     if (event.key == "ArrowLeft") {
                         imageIndex--
                         if (imageIndex < 0) {
@@ -134,11 +131,9 @@ function photographerMediaFactory(mediaData, index) {
                         }
                         slideShow(imageIndex)
                     }
-
                 })
                 //-------------------------------------------- fin de la onction click pour lightbox (image)
             })
-
             //-------------------------------------------- fin de if (image)
             //-------------------------------------------- Si le media video existe alor... 
         } else {
