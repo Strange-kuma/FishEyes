@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="logo du site" />
     </header>
     <main id="main">
       <section class="photograph-header">
@@ -54,18 +54,18 @@
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()"  alt="Icone fermeture"/>
         </header>
         <form class="FormContact">
           <div>
-            <label>Prénom</label>
-            <input class="Prenom" type="text" placeholder="Entrée votre prenom" required/>
-            <label>Nom</label>
-            <input class="Nom" type="text" placeholder="Entrée votre nom" required/>
-            <label>Email</label>
-            <input class="Email" type="mail" placeholder="Entrée votre Adresse" required/>
-            <label>Message</label>
-            <input class="Message" type="text" placeholder="Entrée votre Message" required/>
+            <label for="prenom">Prénom</label>
+            <input class="Prenom" id="prenom" type="text" placeholder="Entrée votre prenom" required/>
+            <label for="nom">Nom</label>
+            <input class="Nom" id="nom" type="text" placeholder="Entrée votre nom" required/>
+            <label for="email">Email</label>
+            <input class="Email" id="email" type="mail" placeholder="Entrée votre Adresse" required/>
+            <label for="message">Message</label>
+            <input class="Message" id="message" type="text" placeholder="Entrée votre Message" required/>
           </div>
           <button type="submit" class="contact_button">Envoyer</button>
         </form>
