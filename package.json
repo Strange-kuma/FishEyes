@@ -5,7 +5,7 @@
     "yorkie": "^2.0.0"
   },
   "scripts": {
-    "lint": "eslint --ext .html,.js,.vue --max-warnings=500 ."
+    "lint": "eslint --ext .html,.js,.vue --max-warnings=0 ."
   },
   "gitHooks": {
     "pre-push": "npm run lint"

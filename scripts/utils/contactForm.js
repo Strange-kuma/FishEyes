@@ -10,6 +10,12 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    return closeModal()
+  }
+});
+
 let sendForm = document.querySelector(".FormContact");
 
 sendForm.addEventListener("submit", function (e) {
