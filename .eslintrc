@@ -10,13 +10,12 @@
   "rules": {
     "eqeqeq": "warn",
     "indent": ["warn", 2, { "SwitchCase": 1 }],
-    "multiline-ternary": ["warn", "always-multiline"],
-    
-    "extends": ["eslint:recommended"]
+    "multiline-ternary": ["warn", "always-multiline"]
   },
   "env": {
     "browser": true,
     "es6": true
-  }
-  
+  },
+  "plugins": ["html"],
+  "extends": ["eslint:recommended"]
 }
