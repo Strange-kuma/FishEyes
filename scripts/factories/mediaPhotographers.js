@@ -21,6 +21,7 @@ function photographerMediaFactory(mediaData, index) {
   const { id, photographerId, title, image, video, likes, date, price } =
     mediaData;
   let media;
+
   const triByLikes = document.getElementById("Popularité");
   const triByDate = document.getElementById("Date");
   const triByAlphabet = document.getElementById("Titre");
@@ -246,7 +247,14 @@ function photographerMediaFactory(mediaData, index) {
         Icon.style.color = "#901C1C";
       }
     });
+  
+    let divlikes = document.createElement("div")
+    let boxlikes = document.querySelector("#cadre-likes")
+    const sumall = allPhMedias.map(item => item.likes).reduce((prev, curr) => prev + curr, 0);
+    divlikes.innerHTML = `<span>${sumall}<ion-icon name="heart"></ion-icon></span> <span>${photographerProfil.price}€ / jour</span>`
+    
     //-------------------------------------------- mise en page des articles
+    boxlikes.appendChild(divlikes)
     article.appendChild(div);
     div.appendChild(h2);
     div.appendChild(span);
