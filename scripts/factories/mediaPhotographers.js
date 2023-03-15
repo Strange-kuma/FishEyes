@@ -25,6 +25,7 @@ function photographerMediaFactory(mediaData, index) {
   const triByLikes = document.getElementById("Popularité");
   const triByDate = document.getElementById("Date");
   const triByAlphabet = document.getElementById("Titre");
+
   triByLikes.addEventListener("click", function () {
     allPhMedias.sort(function (a, b) {
       return parseFloat(a.likes) - parseFloat(b.likes);
@@ -32,6 +33,7 @@ function photographerMediaFactory(mediaData, index) {
     document.querySelector(".media").innerHTML = "";
     displayPhotographerData(allPhMedias);
   });
+
   triByDate.addEventListener("click", function () {
     allPhMedias.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
@@ -39,6 +41,7 @@ function photographerMediaFactory(mediaData, index) {
     document.querySelector(".media").innerHTML = "";
     displayPhotographerData(allPhMedias);
   });
+
   triByAlphabet.addEventListener("click", function () {
     allPhMedias.sort(function (a, b) {
       var textA = a.title.toUpperCase();
@@ -83,12 +86,13 @@ function photographerMediaFactory(mediaData, index) {
         //-------------------------------------------- Creation de la croix de la lightbox
         let cross = document.createElement("ion-icon");
         cross.setAttribute("name", "close");
+        cross.setAttribute("alt", "close dialog");
         cross.setAttribute("id", "close");
         //-------------------------------------------- fonction qui permet le changement d'image dans la lightbox en selectionnant celle ci par la variable index
         function slideShow(i) {
           if (allPhMedias[i].image) {
             divImageHtml.innerHTML = ` 
-                    <img src="${media}/${allPhMedias[i].image}" alt=""  />
+                    <img src="${media}/${allPhMedias[i].image}" alt="image breasted roller"  />
                     <p>${allPhMedias[i].title}</p>   
                 `;
           } else {
@@ -227,37 +231,53 @@ function photographerMediaFactory(mediaData, index) {
     h2.textContent = title;
     //-------------------------------------------- Variable qui introduit l'icone du like
     let Icon = document.createElement("ion-icon");
+    Icon.setAttribute("class", "iconheart");
+    Icon.setAttribute("id", "");
     Icon.setAttribute("name", "heart");
+    Icon.setAttribute("aria-label", "likes");
     let numberOfLike = likes;
     //-------------------------------------------- Constante qui crée une balise span
-    const span = document.createElement("span");
-    span.innerHTML = numberOfLike;
+    const span1 = document.createElement("span");
+    span1.innerHTML = numberOfLike;
     let likestatus = false;
+
+    let divlikes = document.createElement("div")
+    let boxlikes = document.querySelector("#cadre-likes")
+
+    let sumall = allPhMedias.map(item => item.likes).reduce((prev, curr) => prev + curr, 0);
+
     //-------------------------------------------- fonction qui au click incremente ou decremente le like
-    Icon.addEventListener("click", function () {
+    let icons = document.querySelectorAll(".iconheart")
+    Icon.addEventListener("click", function (e) {
+      console.log(e.currentTarget)
       if (!likestatus) {
         likestatus = true;
-        numberOfLike++;
-        span.innerHTML = numberOfLike;
+        numberOfLike++
+        allPhMedias[index].likes = numberOfLike
+        span1.innerHTML = numberOfLike;
         Icon.style.color = "#da0000";
+        console.log(index)
+        console.log("like")
       } else {
         likestatus = false;
         numberOfLike--;
-        span.innerHTML = numberOfLike;
+        allPhMedias[index].likes = numberOfLike
+        span1.innerHTML = numberOfLike;
         Icon.style.color = "#901C1C";
+        console.log("dislike")
       }
+      sumall = allPhMedias.map(item => item.likes).reduce((prev, curr) => prev + curr, 0);
+      console.log(sumall)
+      document.querySelector('.sums').textContent = sumall
     });
-  
-    let divlikes = document.createElement("div")
-    let boxlikes = document.querySelector("#cadre-likes")
-    const sumall = allPhMedias.map(item => item.likes).reduce((prev, curr) => prev + curr, 0);
-    divlikes.innerHTML = `<span>${sumall}<ion-icon name="heart"></ion-icon></span> <span>${photographerProfil.price}€ / jour</span>`
-    
+
+    divlikes.innerHTML = `<span><span class="sums">${sumall}</span><ion-icon name="heart"></ion-icon></span> <span>${photographerProfil.price}€ / jour</span>`
+
     //-------------------------------------------- mise en page des articles
     boxlikes.appendChild(divlikes)
     article.appendChild(div);
     div.appendChild(h2);
-    div.appendChild(span);
+    div.appendChild(span1);
     div.appendChild(Icon);
     return article;
   }

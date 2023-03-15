@@ -10,25 +10,25 @@
   <body>
     <header>
       <a href="index.html">
-        <img src="assets/images/logo.png" class="logo" alt="logo du site"/>
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
       </a>
     </header>
     <main id="main">
-      <section class="photograph-header">
+      <section class="photograph-header" aria-label="Photographe En-tête">
         <article>
           <h1 class="name"></h1>
           <p class="pays"></p>
           <p class="citation"></p>
         </article>
-        <button class="contact_button" onclick="displayModal()">
+        <button aria-label="Modal" class="contact_button" onclick="displayModal()">
           Contactez-moi
         </button>
         <img class="avatar" src="" alt="avatar" />
       </section>
-      <section class="photograph-media">
+      <section class="photograph-media" aria-label="Photographe media">
         <div>
           <label for="select">Trier par</label>
-          <select name="" id="select">
+          <select aria-labelledby="8" aria-label="Order by" name="" id="select">
             <option id="Popularité" value="">
               Popularité
             </option>
@@ -48,31 +48,31 @@
     <div id="cadre-likes">
 
     </div>
-    <div class="lightbox">
+    <div class="lightbox" aria-label="image closeup view">
       <div class="dialog">
-        <ion-icon class="arrowLeft" name="arrow-dropleft-circle"></ion-icon>
+        <ion-icon class="arrowLeft" aria-label="previous image" name="arrow-dropleft-circle"></ion-icon>
         <div class="imgbox"></div>
-        <ion-icon class="arrowRight" name="arrow-dropright-circle"></ion-icon>
+        <ion-icon class="arrowRight" aria-label="next image" name="arrow-dropright-circle"></ion-icon>
       </div>
     </div>
     <div id="contact_modal">
-      <div class="modal">
+      <div aria-label="Contact me" aria-labelledby="2" class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()"  alt="Icone fermeture"/>
+          <img src="assets/icons/close.svg" aria-label="Close" onclick="closeModal()"  alt="Icone fermeture"/>
         </header>
         <form class="FormContact">
           <div>
-            <label for="prenom">Prénom</label>
-            <input class="Prenom" id="prenom" type="text" placeholder="Entrée votre prenom" required/>
-            <label for="nom">Nom</label>
-            <input class="Nom" id="nom" type="text" placeholder="Entrée votre nom" required/>
+            <label  for="prenom">Prénom</label>
+            <input aria-labelledby="3" aria-label="First name" class="Prenom" id="prenom" type="text" placeholder="Entrée votre prenom" required/>
+            <label  for="nom">Nom</label>
+            <input aria-labelledby="5" aria-label="Last name" class="Nom" id="nom" type="text" placeholder="Entrée votre nom" required/>
             <label for="email">Email</label>
-            <input class="Email" id="email" type="mail" placeholder="Entrée votre Adresse" required/>
+            <input aria-labelledby="7" aria-label="Email" class="Email" id="email" type="mail" placeholder="Entrée votre Adresse" required/>
             <label for="message">Message</label>
-            <input class="Message" id="message" type="text" placeholder="Entrée votre Message" required/>
+            <input aria-labelledby="9" aria-label="Your message" class="Message" id="message" type="text" placeholder="Entrée votre Message" required/>
           </div>
-          <button type="submit" class="contact_button">Envoyer</button>
+          <button aria-role="button" aria-label="send" type="submit" class="contact_button">Envoyer</button>
         </form>
       </div>
     </div>
